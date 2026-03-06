@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Social Room</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/+esm"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Interactive Social Room</h1>
+            <div class="user-count">
+                <span class="count-label">Active Users:</span>
+                <span id="userCount" class="count-value">0</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Your Messages</h2>
+                <p class="input-hint">Enter up to 20 characters per message. Enable Markdown for rich formatting.</p>
+                
+                <div class="message-inputs">
+                    <div class="input-group">
+                        <label for="message1">Message 1</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="message1" 
+                                class="message-input" 
+                                maxlength="20" 
+                                placeholder="Your message..."
+                            >
+                            <span class="char-count">0/20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="message2">Message 2</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="message2" 
+                                class="message-input" 
+                                maxlength="20" 
+                                placeholder="Your message..."
+                            >
+                            <span class="char-count">0/20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="message3">Message 3</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="message3" 
+                                class="message-input" 
+                                maxlength="20" 
+                                placeholder="Your message..."
+                            >
+                            <span class="char-count">0/20</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="markdown-option">
+                    <label>
+                        <input type="checkbox" id="markdownToggle">
+                        <span>Render Markdown in messages</span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="users-section">
+                <h2>Room Messages</h2>
+                <div id="usersList" class="users-list">
+                    <div class="empty-state">No users in the room yet. Be the first!</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>All changes sync in real-time across browsers and tabs. Powered by Firebase.</p>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebaseapp/js/app/1.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebaseapp/js/app/1.7.0/firebase-database-compat.js"></script>
+    
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
